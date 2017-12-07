@@ -31,7 +31,8 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/core/library'],
 		controls: [
 			"ui5lab.geometry.Square",
 			"ui5lab.geometry.Circle",
-			"ui5lab.geometry.Triangle"
+			"ui5lab.geometry.Triangle",
+			"ui5lab.geometry.Camera"
 		],
 		elements: [],
 		noLibraryCSS: false,

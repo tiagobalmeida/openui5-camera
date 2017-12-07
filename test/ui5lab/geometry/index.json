@@ -55,6 +55,20 @@
 						"description": "Press the triangle or arrow keys to rotate, simple yet effective user interaction"
 					}
 				]
+			},
+            "Camera": {
+				"id": "Camera",
+				"name": "Camera Control",
+				"type": "control",
+				"version": 1.0,
+				"description": "Web cam access for your ui5",
+				"samples": [
+					{
+						"id": "Camera",
+						"name": "Camera Preview",
+						"description": "Test the camera control"
+					}
+				]
 			}
 		}
 	}
