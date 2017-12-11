@@ -37,7 +37,9 @@ sap.ui.define([],
                   .replace("%w", oControl.getPreviewwidth())
                   .replace("%h", oControl.getPreviewheight())
                  );
-        oRm.write("<canvas width='640' height='480' style='display: none;'></canvas>");
+        oRm.write("<canvas width='640' height='480' style='display: none; width: %wpx; height: %hpx'></canvas>"
+                  .replace("%w", oControl.getPreviewwidth())
+                  .replace("%h", oControl.getPreviewheight()));
         // Second row
         oRm.write("<div style='display: flex; flex-direction: row; justify-content: space-around;'>");
         oRm.renderControl(oControl._snapshotButton);

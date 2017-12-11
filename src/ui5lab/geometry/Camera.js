@@ -94,6 +94,7 @@ sap.ui.define([
                 oVideo.style.display = "block";
             }
             this._confirmButton.setEnabled(!this._displayingVideo);
+            this._confirmButton.rerender();
         },
 
 
