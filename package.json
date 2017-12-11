@@ -2,11 +2,11 @@
   "name": "ui5lab-library-simple",
   "version": "0.1.0",
   "description": "Sample of a custom UI5 library for the UI5Lab project",
-  "repository" : {
-      "type" : "git",
-      "url" : "https://github.com/UI5Lab/UI5Lab-library-simple.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UI5Lab/UI5Lab-library-simple.git"
   },
-  "license" : "Apache-2.0",
+  "license": "Apache-2.0",
   "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified. Please add some.\" && exit 1",

@@ -28,8 +28,22 @@ sap.ui.define([],
 		oRm.writeStyles();
 
 		oRm.write(">");
-		oRm.write("<video></video>");
-		oRm.write("<canvas></canvas>");
+
+        // Create a flex with 2 rows. The bottom row divided in two columns
+
+        oRm.write("<div style='display: flex; flex-direction: column;'>");
+        // First row
+        oRm.write("<video width='%w' height='%h'></video>"
+                  .replace("%w", oControl.getPreviewwidth())
+                  .replace("%h", oControl.getPreviewheight())
+                 );
+        oRm.write("<canvas width='640' height='480' style='display: none;'></canvas>");
+        // Second row
+        oRm.write("<div style='display: flex; flex-direction: row; justify-content: space-around;'>");
+        oRm.renderControl(oControl._snapshotButton);
+        oRm.renderControl(oControl._confirmButton);
+		oRm.write("</div>");
+		oRm.write("</div>");
 
 		oRm.write("</div>");
 

@@ -1,16 +1,9 @@
-# UI5Lab-library-simple
+# OpenUI5-Camera
 
-A simple control library that holds custom geometrical controls for testing the UI5Lab library structure.
-The [UI5Lab-browser](https://github.com/openui5/UI5Lab-browser) is loaded as a dependency to display the library content for testing during development.
-
-Feel free to adopt!
-
-> The repository is an example how to create custom [OpenUI5](https://github.com/SAP/openui5) control library using Grunt & Bower based on the library [documentation](https://github.com/SAP/openui5/blob/master/docs/controllibraries.md) in the OpenUI5 repository. 
+A control wrapping the [jpeg_camera by Adam Wróbel](https://github.com/amw/jpeg_camera). It allows you to display the live camera on your UI5 app and take pictures.
 
 ## TODO
-* register the built library package so that it can be consumed somewhere else
-* load browser as a built package and to the dependency tree work (is currently loaded from github directly as a proof of concept)
-* remove explicit bower dependency to sap.f (is only needed by browser, not by library project itself)
+* Everything
 
 ## Getting started
 
@@ -66,4 +59,3 @@ Instructions how to connect to the community and contribute to the UI5lab projec
 
 ### Credits
 
-Thank you to @matz3 for your input and support!
