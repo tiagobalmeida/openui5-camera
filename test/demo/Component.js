@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"QRCode/model/models"
+	"Camera/model/models"
 ], function(UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("QRCode.Component", {
+	return UIComponent.extend("Camera.Component", {
 
 		metadata: {
 			manifest: "json"

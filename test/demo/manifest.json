@@ -45,7 +45,7 @@
 				"sap.ui.core": {},
 				"sap.m": {},
 				"sap.ui.layout": {},
-				"it.designfuture.qrcode": {}
+				"openui5.camera": {}
 			}
 		},
 		"contentDensities": {
