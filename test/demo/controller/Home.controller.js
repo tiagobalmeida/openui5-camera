@@ -36,7 +36,7 @@ sap.ui.define([
             if (oTab !== "demo") {
                 oCamera.stopCamera();
             } else {
-                oCamera.rerender(true);
+                oCamera.rerender();
             }
         }
 

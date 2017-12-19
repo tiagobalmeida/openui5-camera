@@ -177,6 +177,7 @@ sap.ui.define([
                        *
                        */
                       stopCamera: function(){
+                          this._displayingVideo = false;
                           if (this._stream){
                               this._stream.getVideoTracks().forEach( function(t){ t.stop(); });
                           }
