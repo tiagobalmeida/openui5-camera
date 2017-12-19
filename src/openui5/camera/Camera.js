@@ -56,7 +56,7 @@ sap.ui.define([
                               /**
                                * Width of the preview window in pixels
                                */
-                              "previewwidth": {
+                              "width": {
                                   type: "string",
                                   defaultValue: "640"
                               },
@@ -64,7 +64,7 @@ sap.ui.define([
                               /**
                                * Height of the preview window in pixels
                                */
-                              "previewheight": {
+                              "height": {
                                   type: "string",
                                   defaultValue: "480"
                               },

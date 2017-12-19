@@ -24,15 +24,15 @@ sap.ui.define([],
                           "<video width='%w' height='%h' style='width: %pwpx; height: %phpx;'></video>"
                               .replace("%w", oControl.getVideoWidth())
                               .replace("%h", oControl.getVideoHeight())
-                              .replace("%pw", oControl.getPreviewwidth())
-                              .replace("%ph", oControl.getPreviewheight())
+                              .replace("%pw", oControl.getWidth())
+                              .replace("%ph", oControl.getHeight())
                       );
                       oRm.write(
                           "<canvas width='%w' height='%h' style='display: none; width: %pwpx; height: %phpx;'></canvas>"
                               .replace("%w", oControl.getVideoWidth())
                               .replace("%h", oControl.getVideoHeight())
-                              .replace("%pw", oControl.getPreviewwidth())
-                              .replace("%ph", oControl.getPreviewheight()));
+                              .replace("%pw", oControl.getWidth())
+                              .replace("%ph", oControl.getHeight()));
 		              oRm.write("</div>");
 		              oRm.write("</div>");
 	              };

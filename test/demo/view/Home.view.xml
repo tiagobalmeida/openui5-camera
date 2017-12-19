@@ -12,12 +12,70 @@
 		<pages>
 			<Page title="{i18n>appTitle}">
 				<content>
-                    <lab:Camera
-                            id="idCamera"
-                            previewwidth="800"
-                            previewheight="600"
-                            snapshot=".onSnapshotPressed"
-                            singleShotMode="false" />
+                    <ObjectHeader
+				            title="Camera control demo"
+				            backgroundDesign="Solid"
+				            number="{/photos/length}"
+				            numberUnit="photos" >
+			        </ObjectHeader>
+			        <IconTabBar
+				            expanded="{device>/isNoPhone}"
+				            class="sapUiSmallMarginBottom sapUiResponsiveContentPadding"
+                            select="onTabSelect">
+				        <items>
+					        <IconTabFilter
+						            text="Demo"
+                                    key="demo">
+                                <l:DynamicSideContent
+			                            class="sapUiDSCExplored sapUiContentPadding"
+			                            sideContentFallDown="BelowM"
+			                            containerQuery="true"
+			                            showSideContent="true">
+			                        <l:mainContent>
+                                        <lab:Camera
+                                                id="idCamera"
+                                                width="800"
+                                                height="600"
+                                                snapshot=".onSnapshot"
+                                                singleShotMode="false" />
+			                        </l:mainContent>
+			                        <l:sideContent>
+                                        <List
+                	                            headerText="Photos"
+                	                            growing="false"
+                	                            items="{
+                		                               path: '/photos'
+                	                                   }"
+                                                >
+                	                        <CustomListItem>
+                		                        <Image
+                			                            src="{src}"
+                			                            densityAware="false"
+                			                            height="100px" >
+                		                        </Image>
+                	                        </CustomListItem>
+                                        </List>
+			                        </l:sideContent>
+                                </l:DynamicSideContent>
+					        </IconTabFilter>
+					        <IconTabFilter
+						            text="About &amp; Usage Info"
+                                    key="info">
+                                <Panel headerText="About this demo" width="auto" class="sapUiResponsiveMargin">
+                                    <Text width="auto"
+                                          class="sapUiResponsiveMargin"
+                                          text="{i18n>about}" />
+                                </Panel>
+                                <Panel headerText="Usage" width="auto" class="sapUiResponsiveMargin">
+                                    <Text width="auto"
+                                          class="sapUiResponsiveMargin"
+                                          text="{i18n>usage}" />
+                                </Panel>
+					        </IconTabFilter>
+				        </items>
+			        </IconTabBar>
+
+			        <!-- <List headerText="A List" backgroundDesign="Translucent" /> -->
 				</content>
 			</Page>
 		</pages>
