@@ -1,19 +1,63 @@
 # OpenUI5-Camera
 
-A control wrapping the [jpeg_camera by Adam Wróbel](https://github.com/amw/jpeg_camera). It allows you to display the live camera on your UI5 app and take pictures.
+An UI5 control which uses the HTML5 media capture API to access the device's camera. The control renders a live camera preview and can take pictures when the users clicks/taps on it.
 
-## TODO
-* Everything
+## Demo
 
-## Getting started
+Please check [test/demo/index.html](here)
+
+## Usage
+
+To use it you must first install this code in your app.
+
+### Instalation
+
+ 1. Do `npm install openui5-camera` at the root of your project. This will pull this code into a subfolder named `node_modules`.
+ 2. Copy file `node_modules\openui5-camera\dist\openui5\camera\` into `thirdparty\openui5\camera\`. For added _awesomeness_, automate this step.
+ 3. In your manifest, declare a dependency to this control by adding this inside `sap.ui5`:
+ ```
+ "resourceRoots": {
+	"openui5.camera": "./thirdparty/openui5/camera/"
+ }
+ ```
+ 4. Check `test/demo/manifest.json` if you're unclear about the previous step.
+
+### Usage
+
+ 1. In the view you want to display the camera preview, insert the following:
+
+```
+<cam:Camera
+    id="idCamera"
+    width="800"
+    height="600"
+    snapshot=".onSnapshot"
+    singleShotMode="false" />
+```
+ 2. Add the following to the same view's namespace declarations: `xmlns:cam="openui5.camera"`
+
+ 3. In the corresponding controller, add an event handler. This function will be called everytime the user clicks/taps the preview.
+It contains the picture in PNG encoded in base64 (so it is a character string).
+
+```
+ onSnapshot: function (oEvent) {
+    // The image is inside oEvent, on the image parameter,
+    // let's grab it.
+    var sSnapshot = oEvent.getParameter("image")});
+    // Do something with it :)
+},
+```
+ 4. Told you this is easy to use. Be happy. 
+
+## Found a bug? Want to contribute to this project?
 
 1. Install node.js (get it from [nodejs.org](http://nodejs.org/)).
  * If working behind a proxy, you need to configure it properly (HTTP_PROXY / HTTPS_PROXY / NO_PROXY environment variables)
 
 2. Clone the repository and navigate into it
 ```sh
-git clone https://github.com/openui5/UI5Lab-library-simple
-cd UI5Lab-library-simple
+git clone https://github.com/jumpifzero/openui5-camera
+cd openui5-camera
 ```
 3. Install all npm dependencies (also installs all bower dependencies)
 ```sh
@@ -22,26 +66,10 @@ npm install
 
 4. Run npm start to lint, build and run a local server (have a look into `Gruntfile.js` to see all the tasks).
 ```sh
-npm start
+grunt
 ```
 
 5. Open a test page in your browser: [http://localhost:8080/test-resources/ui5lab/geometry/Square.html](http://localhost:8080/test-resources/ui5lab/geometry/Square.html)
-
-## Publishing a library project
-
-1. Maintain the index.json file in the test folder to contain all artifacts and samples. You can test how your library would appear in the browser locally by adding a reference to the libraries.json file
-
->Note: this metadata is still work in progress and subject to change. We will have to see what the best place and structure for this is in the future
- 
-2. Run grunt build to create a library preload and the CSS theme build for your library artifacts. Everything (minified and unminified sources) will be created in the dist folder, ready to be published and consumed by other projects
-```sh
-grunt build
-```
-
-3. Publish your package to npm, be sure to include only the metadata and the dist folder to keep the package size small (see .npmignore file for details) 
-```sh
-npm publish
-```
 
 ### Directions
 

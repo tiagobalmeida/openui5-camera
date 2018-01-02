@@ -46,6 +46,7 @@
                 	                            items="{
                 		                               path: '/photos'
                 	                                   }"
+                                                noDataText="{i18n>nophotos}"
                                                 >
                 	                        <CustomListItem>
                 		                        <Image
@@ -59,23 +60,21 @@
                                 </l:DynamicSideContent>
 					        </IconTabFilter>
 					        <IconTabFilter
-						            text="About &amp; Usage Info"
+						            text="About &amp; Usage"
                                     key="info">
-                                <Panel headerText="About this demo" width="auto" class="sapUiResponsiveMargin">
-                                    <Text width="auto"
-                                          class="sapUiResponsiveMargin"
-                                          text="{i18n>about}" />
+                                <Panel headerText="{i18n>title.about}" width="auto" class="sapUiResponsiveMargin">
+                                    <Text text="{i18n>about}" />
+                                    <FormattedText target="_blank"
+                                          htmlText="{i18n>usage}"/>
                                 </Panel>
-                                <Panel headerText="Usage" width="auto" class="sapUiResponsiveMargin">
-                                    <Text width="auto"
-                                          class="sapUiResponsiveMargin"
-                                          text="{i18n>usage}" />
+                                <Panel headerText="{i18n>title.author}" width="auto" class="sapUiResponsiveMargin">
+                                    <Link target="_blank"
+                                          href="https://twitter.com/tiagobalmeida"
+                                          text="Tiago Almeida - @tiagobalmeida"/>
                                 </Panel>
 					        </IconTabFilter>
 				        </items>
 			        </IconTabBar>
-
-			        <!-- <List headerText="A List" backgroundDesign="Translucent" /> -->
 				</content>
 			</Page>
 		</pages>
