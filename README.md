@@ -4,7 +4,7 @@ An UI5 control which uses the HTML5 media capture API to access the device's cam
 
 ## Demo
 
-Please check [test/demo/index.html](here)
+Please check [here](test/demo/index.html)
 
 ## Usage
 
@@ -13,7 +13,7 @@ To use it you must first install this code in your app.
 ### Instalation
 
  1. Do `npm install openui5-camera` at the root of your project. This will pull this code into a subfolder named `node_modules`.
- 2. Copy file `node_modules\openui5-camera\dist\openui5\camera\` into `thirdparty\openui5\camera\`. For added _awesomeness_, automate this step.
+ 2. Copy file `node_modules\openui5-camera\dist\openui5\camera\` into `thirdparty\openui5\camera\`.
  3. In your manifest, declare a dependency to this control by adding this inside `sap.ui5`:
  ```
  "resourceRoots": {
@@ -47,7 +47,7 @@ It contains the picture in PNG encoded in base64 (so it is a character string).
     // Do something with it :)
 },
 ```
- 4. Told you this is easy to use. Be happy. 
+ 4. Told you this is easy to use. 
 
 ## Found a bug? Want to contribute to this project?
 
@@ -64,26 +64,18 @@ cd openui5-camera
 npm install
 ```
 
-4. Run npm start to lint, build and run a local server (have a look into `Gruntfile.js` to see all the tasks).
+4. Run `npm start` or `grunt` to lint, build and run a local server (have a look into `Gruntfile.js` to see all the tasks).
 ```sh
 grunt
 ```
 
-5. Open a test page in your browser: [http://localhost:8080/test-resources/ui5lab/geometry/Square.html](http://localhost:8080/test-resources/ui5lab/geometry/Square.html)
-
-### Directions
-
-[Browser](http://localhost:8080/test-resources/ui5lab/browser/index.html) A sample browser showcasing artifacts from one or more libraries
-
-[Control page](http://localhost:8080/test-resources/ui5lab/geometry/Square.html) An HTML test page instantiating the control
-
-[Test page](http://localhost:8080/test-resources/ui5lab/geometry/qunit/Square.qunit.html) A simple QUnit test
-
-[Testuite](http://localhost:8080/test-resources/ui5lab/geometry/qunit/testsuite.qunit.html) A QUnit testsuite running all unit tests in this library
+5. Open a test page in your browser: [http://localhost:8080/test/demo/index.html](http://localhost:8080/test/demo/index.html) *Attention:* In Chrome, the camera API is blocked when using http as the protocol. For this reason, you have to either disable web security or setup a self-signed https local server.
 
 ### Contributing
 
-Instructions how to connect to the community and contribute to the UI5lab project can be found in the [main repository](https://github.com/openui5/UI5Lab/)!
+Contributions are welcomed. Please use a feature branch and don't forget to include your name (alphabetical order) in the list below.
 
-### Credits
+### Contributors
+
+ - Tiago Almeida - [jumpifzero@gmail.com](mailto:jumpifzero@gmail.com) - @tiagobalmeida
 
