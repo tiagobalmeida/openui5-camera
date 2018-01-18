@@ -1,10 +1,10 @@
 {
-  "name": "ui5lab-library-simple",
-  "version": "0.1.0",
-  "description": "Sample of a custom UI5 library for the UI5Lab project",
+  "name": "openui5-camera",
+  "version": "0.0.2",
+  "description": "A pure javascript UI5 control that enables device's camera access and easy snapshots",
   "repository": {
     "type": "git",
-    "url": "https://github.com/UI5Lab/UI5Lab-library-simple.git"
+    "url": "https://github.com/jumpifzero/openui5-camera.git"
   },
   "license": "Apache-2.0",
   "private": false,
