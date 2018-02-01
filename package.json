@@ -1,13 +1,24 @@
 {
   "name": "openui5-camera",
-  "version": "0.0.2",
+  "version": "0.0.9",
   "description": "A pure javascript UI5 control that enables device's camera access and easy snapshots",
+  "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/jumpifzero/openui5-camera.git"
+    "url": "https://github.com/jumpifzero/openui5-camera"
   },
-  "license": "Apache-2.0",
-  "private": false,
+  "keywords": [
+    "camera",
+    "openui5",
+    "sapui5",
+    "ui5",
+    "javascript"
+  ],
+  "author": {
+    "name": "Tiago Almeida",
+    "email": "jumpifzero@gmail.com"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified. Please add some.\" && exit 1",
     "postinstall": "bower install",
@@ -20,7 +31,6 @@
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^19.0.0",
-    "grunt-openui5": "^0.12.0",
-    "ui5lab-browser": "^0.1.0"
+    "grunt-openui5": "^0.12.0"
   }
 }

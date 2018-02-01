@@ -9,6 +9,7 @@ Please check [here](https://jumpifzero.github.io/openui5-camera/test/demo/index.
 
 ## TODO
 
+- [ ] Add an optional button instead of clicking on the preview only
 - [ ] Allow the image format to be configurable
 - [ ] Allow an easy way to get the actual image pixels for manipulation
 - [ ] Configurable camera (front-facing vs back-facing)
@@ -40,8 +41,7 @@ To use it you must first install this code in your app.
     id="idCamera"
     width="800"
     height="600"
-    snapshot=".onSnapshot"
-    singleShotMode="false" />
+    snapshot=".onSnapshot" />
 ```
  2. Add the following to the same view's namespace declarations: `xmlns:cam="openui5.camera"`
 
@@ -53,7 +53,7 @@ It contains the picture in PNG format encoded in base64 (so it is a character st
     // The image is inside oEvent, on the image parameter,
     // let's grab it.
     var sSnapshot = oEvent.getParameter("image")});
-    // Do something with it :)
+    // Do something with it!
     // As you see in the demo, you can attach it directly to a src of an Image. 
     // Because it is already a text string it is also easy to POST to a server inside a json message. 
 },
@@ -89,5 +89,5 @@ Contributions are welcomed. Please use a feature branch and don't forget to incl
 
  - Tiago Almeida - [jumpifzero@gmail.com](mailto:jumpifzero@gmail.com) - @tiagobalmeida
 
-@stermi repo openui5-chartjs was critical as an example, so thanks @stermi :)
+@stermi repo openui5-chartjs was also critical as an example, so thanks @stermi and all other UI5Lab contributors :)
 

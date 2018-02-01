@@ -1,12 +1,29 @@
 {
-  "name": "ui5lab-library-simple",
-  "description": "Sample of a custom UI5 library for the UI5Lab project",
-  "private": true,
-  "dependencies": {
-    "openui5-sap.ui.core": "openui5/packaged-sap.ui.core",
-    "openui5-sap.m": "openui5/packaged-sap.m",
-    "openui5-sap.f": "openui5/packaged-sap.f",
-    "openui5-sap.ui.layout": "openui5/packaged-sap.ui.layout",
-    "openui5-themelib_sap_belize": "openui5/packaged-themelib_sap_belize"
+    "name": "openui5-camera",
+    "description": "Use the device's camera in your UI5 app",
+    "license": "MIT",
+    "keywords": [
+        "camera",
+        "openui5",
+        "sapui5",
+        "javascript"
+    ],
+    "moduleType": ["amd"],
+    "homepage": "https://github.com/jumpifzero/openui5-camera",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "example"
+    ],
+    "authors": [
+        "Tiago Almeida ( @tiagobalmeida ) <jumpifzero@gmail.com>"
+    ],
+    "dependencies": {
+        "openui5-sap.ui.core": "openui5/packaged-sap.ui.core",
+        "openui5-sap.m": "openui5/packaged-sap.m",
+        "openui5-sap.f": "openui5/packaged-sap.f",
+        "openui5-sap.ui.layout": "openui5/packaged-sap.ui.layout",
+        "openui5-themelib_sap_belize": "openui5/packaged-themelib_sap_belize#1.46.12"
   }
 }

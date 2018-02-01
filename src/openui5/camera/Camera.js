@@ -1,10 +1,16 @@
+/*
+ * A simple UI5 control wrapping the HTML5 media API
+ * allowing the library user to easily take Pictures in javascript
+ * very easily. The control renders a Video preview element
+ * (technically a video html tag). When clicked the image is grabbed
+ * as a base64 encoded PNG. In the future would be nice to have the
+ * format configurable.
+ */
 sap.ui.define([
     'jquery.sap.global',
-    'sap/ui/core/Control',
-    'sap/m/Button',
-    'sap/ui/core/Icon'
+    'sap/ui/core/Control'
 ],
-              function(jQuery, Control, Button, Icon) {
+              function(jQuery, Control) {
                   "use strict";
 
                   /**
@@ -24,34 +30,6 @@ sap.ui.define([
                        */
                       metadata: {
                           properties: {
-
-                              /**
-                               * In single shot mode the video preview stops when the user
-                               * clicks the button. It raises a snapshot event
-                               * and then needs to be unlocked into preview mode again
-                               * before being able to take another one.
-                               * When this mode is false, the preview is always visible,
-                               * every click captures the snapshot and raises the event.
-                               * This is the default mode.
-                               */
-                              "singleShotMode": {
-                                  type: "boolean",
-                                  defaultValue: true
-                              },
-
-                              /**
-                               *
-                               */
-                              "buttonIcon": {
-                                  type: "string",
-                                  defaultValue: "sap-icon://camera"
-                              },
-
-                              "buttonText": {
-                                  type: "string",
-                                  defaultValue: ""
-                              },
-
 
                               /**
                                * Width of the preview window in pixels
@@ -102,40 +80,23 @@ sap.ui.define([
                       init: function() {
                           var that = this;
                           this._displayingVideo = false; // Is the control displaying video at the moment?
-                          this._currentSnapshot = null; // Last taken snapshot
-                          var oSnapshotButton = new Icon({
-                              src: this.getButtonIcon()
-                          });
-                          oSnapshotButton.attachPress(that._onSnapshotButtonPress.bind(that));
-                          this._snapshotButton = oSnapshotButton;
                       },
 
 
-                      _onSnapshotButtonPress: function() {
+                      /**
+                       * Handler for when the user clicks the video preview.
+                       * Fires the Snapshot event with the image inside.
+                       **/
+                      _onUserClickedVideo: function() {
                           var iVideoWidth = parseInt(this.getVideoWidth(), 10);
                           var iVideoHeight = parseInt(this.getVideoHeight(), 10);
-                          var oCanvas = this._getCanvas();
-                          var oVideo = this._getVideo();
-                          var bSingleShotMode = this.getSingleShotMode();
                           if (this._displayingVideo) {
                               // Grab the picture from the video element
                               var oImage = this._takePicture(iVideoWidth, iVideoHeight);
-                              this._currentSnapshot = oImage;
                               // Send snapshot event with the image inside.
                               this.fireSnapshot({
                                   image: oImage
                               });
-                              if (bSingleShotMode) {
-                                  oVideo.style.display = "none";  // Hide the video
-                                  oCanvas.style.display = "block"; // Display the preview
-                                  this._displayingVideo = false;
-                              }
-                          } else {
-                              if (bSingleShotMode) {
-                                  this._displayingVideo = true;
-                                  oCanvas.style.display = "none"; // Hide the preview
-                                  oVideo.style.display = "block"; // Display the video
-                              }
                           }
                       },
 
@@ -189,21 +150,21 @@ sap.ui.define([
                        */
                       onAfterRendering: function() {
                           var that = this;
-                          // grab the canvas inside my rendered DOM element
                           var oVideo = this._getVideo();
+                          // Attach a click handler to the video element
                           if (oVideo && !oVideo.onclick){
                               oVideo.onclick = function(){
-                                  that._onSnapshotButtonPress();
+                                  that._onUserClickedVideo();
                               };
                           }
                           if (oVideo && !this._displayingVideo) {
                               // set the camera stream on the canvas.
                               // Ask the user for camera access.
                               navigator.mediaDevices.getUserMedia({
-                                  video: { facingMode: "environment" }, // by default the back camera
+                                  video: { facingMode: "environment" }, // Back camera
                                   audio: false
                               })
-                              .then(function(stream) {
+                                  .then(function(stream) {
                                       // We have a camera. Let's store the stream for later use
                                       that._stream = stream;
                                       oVideo.srcObject = stream;
@@ -211,7 +172,7 @@ sap.ui.define([
                                       that._displayingVideo = true;
                                   })
                                   .catch(function(err) {
-                                      jQuery.sap.log.error("Cannot access camera. It will be left blank: " + err);
+                                      jQuery.sap.log.error("Problems accessing the camera: " + err);
                                   });
                           }
                       }
