@@ -7,7 +7,7 @@
         "documentation": "https://github.com/jumpifzero/openui5-camera",
         "demo": "https://jumpifzero.github.io/openui5-camera/test/demo/",
         "license": "MIT",
-        "version": "0.0.10",
+        "version": "0.0.11",
         "content": {
             "Camera": {
                 "id": "camera",
