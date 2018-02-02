@@ -1,6 +1,6 @@
 {
   "name": "openui5-camera",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A pure javascript UI5 control that enables device's camera access and easy snapshots",
   "license": "MIT",
   "private": false,

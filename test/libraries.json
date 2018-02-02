@@ -1,5 +1,5 @@
 {
 	"libraries": [
-		"ui5lab.geometry"
+		"openui5.camera"
 	]
 }
