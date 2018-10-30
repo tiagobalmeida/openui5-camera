@@ -17,10 +17,9 @@
                 "description": "Take pictures in your UI5 app. Pure javascript implementation.",
                 "samples": [
                     {
-                        "id": "camera",
-                        "name": "Simple demo",
-                        "description": "Click the camera preview to push png's into the model",
-                        "url": "https://jumpifzero.github.io/openui5-camera/test/demo/"
+                        "id": "Camera",
+                        "name": "Simple Camera Control demo",
+                        "description": "See the library demo for a full-featured example"
                     }
                 ]
             }
