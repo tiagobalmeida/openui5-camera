@@ -5,7 +5,7 @@ This is a work in progress so feature set is still very basic.
 
 ## Demo
 
-Please check [here](https://jumpifzero.github.io/openui5-camera/test/demo/index.html)
+Please check [here](https://tiagobalmeida.github.io/openui5-camera/test/demo/index.html)
 
 ## TODO
 
